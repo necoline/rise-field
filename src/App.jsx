@@ -25,7 +25,6 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-       {/* I'm here! */}
         <Provider inject={[studentContainer]}>
           <Switch>
             <Route exact path="/" component={Landing} />

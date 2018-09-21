@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-// import Header from './common/Header';
+import Header from './common/Header';
 
 const Landing = () => (
   <div>
-    {/* <Header title="RISE"/> */}
+    <Header title="RISE"/>
     <div className="mdc-layout-grid container">
       <div className="mdc-layout-grid__inner">
         <div className="mdc-layout-grid__cell row grid-center">
