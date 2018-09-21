@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'unstated';
 
 import Landing from './Landing';
-// import Roster from './roster/Roster';
-// import NewStudent from './student/NewStudent';
-// import Student from './student/Student';
-// import UpdateStudent from './student/UpdateStudent';
+import Roster from './roster/Roster';
+import NewStudent from './student/NewStudent';
+import Student from './student/Student';
+import UpdateStudent from './student/UpdateStudent';
 
 import StudentContainer from './containers/StudentContainer'
 
@@ -28,7 +28,7 @@ class App extends Component {
         <Provider inject={[studentContainer]}>
           <Switch>
             <Route exact path="/" component={Landing} />
-            {/* <Route
+            <Route
               exact
               path="/roster"
               component={Roster} />
@@ -42,7 +42,7 @@ class App extends Component {
               component={UpdateStudent} />
             <Route
               path="/student-form"
-              component={NewStudent} /> */}
+              component={NewStudent} /> 
           </Switch>
         </Provider> 
       </div>
