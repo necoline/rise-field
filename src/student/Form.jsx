@@ -20,7 +20,7 @@ class Form extends Component {
   setSubmission = formAction => (event) => {
     event.preventDefault()
     formAction(this.state)
-    this.props.proceedToRoster()
+    this.props.proceedToRegister()
   }
 
   handleChange = ({target}) =>  {
@@ -91,12 +91,12 @@ class Form extends Component {
 Form.propTypes = {
   submitText: PropTypes.string.isRequired,
   formAction: PropTypes.func.isRequired,
-  proceedToRoster: PropTypes.func
+  proceedToRegister: PropTypes.func
 
 };
 
 Form.defaultProps = {
-  proceedToRoster: PropTypes.func
+  proceedToRegister: PropTypes.func
 };
 
 export default Form;

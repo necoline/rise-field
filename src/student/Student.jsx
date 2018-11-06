@@ -27,7 +27,7 @@ class Student extends Component {
   setRemoveStudent = removeStudent => (event) => {
     event.preventDefault()
     removeStudent(this.state.id)
-    this.props.history.push('/roster')
+    this.props.history.push('/register')
   } 
 
   render() {

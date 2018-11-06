@@ -9,17 +9,17 @@ const Landing = () => (
       <div className="mdc-layout-grid__inner">
         <div className="mdc-layout-grid__cell row grid-center">
           <Link to="/">
-            <button className="mdc-button mdc-button--raised">Attendance</button>
+            <button className="mdc-button mdc-button--raised large-button">Attendance</button>
           </Link>
         </div>
         <div className="mdc-layout-grid__cell row grid-center">
-          <Link to="/roster">
-            <button className="mdc-button mdc-button--raised">Roster</button>
+          <Link to="/register">
+            <button className="mdc-button mdc-button--raised large-button">Register</button>
           </Link>
         </div>
         <div className="mdc-layout-grid__cell row grid-center">
           <Link to="/">
-            <button className="mdc-button mdc-button--raised">Reports</button>
+            <button className="large-button mdc-button mdc-button--raised">Reports</button>
           </Link>
         </div>
       </div>

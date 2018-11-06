@@ -69,7 +69,7 @@ a {
   width: 100%;
 }
 
-// ------------------------------------------------ RESPONSIVENES ------------------------------------------------
+// ------------------------------------------------ RESPONSIVENESS ------------------------------------------------
 // --------------------------------------------------- DESKTOP --------------------------------------------------
 @include desktop {
   .container {
@@ -182,6 +182,10 @@ a {
   .delete-btn {
     margin-left: 80%;
     @include mdc-button-ink-color($mdc-theme-on-primary);
+  }
+
+  .large-button {
+    background-color: purple;
   }
 
   .fab-right {

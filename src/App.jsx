@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'unstated';
 
 import Landing from './Landing';
-import Roster from './roster/Roster';
+import Register from './register/Register';
 import NewStudent from './student/NewStudent';
 import Student from './student/Student';
 import UpdateStudent from './student/UpdateStudent';
@@ -30,8 +30,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route
               exact
-              path="/roster"
-              component={Roster} />
+              path="/register"
+              component={Register} />
             <Route
               exact
               path="/student/:id"

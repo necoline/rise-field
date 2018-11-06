@@ -31,7 +31,7 @@ class UpdateStudentDetails extends Component {
     event.preventDefault()
     const id = this.props.match.params.id
     updateStudent(id, this.state)
-    this.props.history.push('/roster')
+    this.props.history.push('/register')
   }
 
   handleChange = ({target}) =>  {

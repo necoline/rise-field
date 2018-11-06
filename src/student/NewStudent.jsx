@@ -11,7 +11,7 @@ import StudentContainer from '../containers/StudentContainer';
         <Header title={'New Student'}/>
         <div className="mdc-layout-grid container">
           <Subscribe to={[StudentContainer]}>{({addStudent}) =>
-            <Form formAction={addStudent} proceedToRoster={() => props.history.push('/roster')} submitText={"Add Student"} />}
+            <Form formAction={addStudent} proceedToRegister={() => props.history.push('/register')} submitText={"Add Student"} />}
           </Subscribe>
         </div>
       </div>
