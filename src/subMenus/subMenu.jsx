@@ -1,25 +1,25 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Header from './common/Header';
+import Header from '../common/Header';
 
-const Landing = () => (
+const SubMenu = () => (
   <div>
-    <Header title="RISE"/>
+    <Header title="Registers"/>
     <div className="mdc-layout-grid container">
       <div className="mdc-layout-grid__inner">
         <div className="mdc-layout-grid__cell row grid-center">
-          <Link to="/">
-            <button className="mdc-button mdc-button--raised large-button">Attendance</button>
+          <Link to="/register">
+            <button className="mdc-button mdc-button--raised large-button">All Students</button>
           </Link>
         </div>
         <div className="mdc-layout-grid__cell row grid-center">
-          <Link to="/subMenu">
-            <button className="mdc-button mdc-button--raised large-button">Register</button>
+          <Link to="/register">
+            <button className="mdc-button mdc-button--raised large-button">Class 1</button>
           </Link>
         </div>
         <div className="mdc-layout-grid__cell row grid-center">
-          <Link to="/">
-            <button className="large-button mdc-button mdc-button--raised">Reports</button>
+          <Link to="/register">
+            <button className="large-button mdc-button mdc-button--raised">Class 2</button>
           </Link>
         </div>
       </div>
@@ -27,4 +27,4 @@ const Landing = () => (
   </div>
   );
 
-export default Landing;
+export default SubMenu;

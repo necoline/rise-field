@@ -7,6 +7,7 @@ import Register from './register/Register';
 import NewStudent from './student/NewStudent';
 import Student from './student/Student';
 import UpdateStudent from './student/UpdateStudent';
+import subMenu from './subMenus/subMenu';
 
 import StudentContainer from './containers/StudentContainer'
 
@@ -28,6 +29,10 @@ class App extends Component {
         <Provider inject={[studentContainer]}>
           <Switch>
             <Route exact path="/" component={Landing} />
+            <Route
+              exact
+              path="/subMenu"
+              component={subMenu} />
             <Route
               exact
               path="/register"

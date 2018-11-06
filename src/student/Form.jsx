@@ -7,14 +7,15 @@ import InputField from '../common/InputField';
 class Form extends Component {
   state = {
     firstName: '',
-    middleName: '',
     lastName: '',
     preferredName: '',
     guardianFirstName: '',
     guardianLastName: '',
-    // dob: 0,
-    // gender: '',
-    // grade: '',
+    individualNumber: '',
+    dob: 0,
+    gender: '',
+    class: '',
+    teacher: '',
   };
 
   setSubmission = formAction => (event) => {
