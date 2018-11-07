@@ -1,4 +1,4 @@
-import React, { Component } from 'react';;
+import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Subscribe } from 'unstated';
 
@@ -9,10 +9,7 @@ import Header from '../common/Header';
 
 class StandardRegister extends Component {
 
-
     getStandardName = (container) => container.selectors.getStandardData(this.props.match.params.id).standardName
-
-    
 
 render() {
     return (
