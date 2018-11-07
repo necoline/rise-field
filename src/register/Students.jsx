@@ -8,6 +8,7 @@ class Students extends Component {
 
     studentName = (id, container) => {
         const { firstName, lastName } = container.selectors.getStudentData(id)
+        // filter by standardName
         return `${lastName}, ${firstName}`
     }
 

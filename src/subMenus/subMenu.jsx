@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Subscribe } from 'unstated';
+import PropTypes from 'prop-types';
 
 import Header from '../common/Header';
+import Students from '../register/Students';
 import StandardContainer from '../containers/StandardContainer';
 
 class SubMenu extends Component {
@@ -12,9 +14,12 @@ class SubMenu extends Component {
     return `${standardName}`
   }
 
+  selectStandard = (id, container) => {
+    container.selectStandard(id)
+  }
+
   render() {
     return (
-
       <div>
         <Header title="Registers"/>
         <div className="mdc-layout-grid container">
@@ -25,17 +30,19 @@ class SubMenu extends Component {
               </Link>
             </div>
             <Subscribe to={[StandardContainer]}>{container =>
-                <div>
-                  {container.selectors.getAllStandards().map(id => 
+              <div>
+                {container.selectors.getAllStandards().map(id => 
                   <div key={id} className="mdc-layout-grid__cell row grid-center">
                     <Link to="/register">
-                      <button className="mdc-button mdc-button--raised large-button">
+                      <button 
+                        className="mdc-button mdc-button--raised large-button"
+                        onClick={() => this.selectStandard(id, container)}>
                         {this.standardName(id, container)}
                       </button>
                     </Link>
-                  </div>)}
-                </div>
-            }
+                  </div>
+                )}
+              </div>}
             </Subscribe> 
           </div>
         </div>
