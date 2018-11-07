@@ -7,11 +7,13 @@ import Register from './register/Register';
 import NewStudent from './student/NewStudent';
 import Student from './student/Student';
 import UpdateStudent from './student/UpdateStudent';
-import subMenu from './subMenus/subMenu';
+import SubMenu from './subMenus/subMenu';
 
 import StudentContainer from './containers/StudentContainer'
+import StandardContainer from './containers/StandardContainer'
 
 const studentContainer = new StudentContainer
+const standardContainer = new StandardContainer
 
 
 class App extends Component {
@@ -21,18 +23,19 @@ class App extends Component {
 
   componentDidMount() {
     studentContainer.fetchAllStudents()
+    standardContainer.fetchAllStandards()
   }
 
   render() {
     return (
       <div className="app">
-        <Provider inject={[studentContainer]}>
+        <Provider inject={[studentContainer, standardContainer]}>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route
               exact
               path="/subMenu"
-              component={subMenu} />
+              component={SubMenu} />
             <Route
               exact
               path="/register"
