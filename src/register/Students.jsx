@@ -8,7 +8,6 @@ class Students extends Component {
 
     studentName = (id, container) => {
         const { firstName, lastName } = container.selectors.getStudentData(id)
-        // filter by standardName
         return `${lastName}, ${firstName}`
     }
 
@@ -17,7 +16,7 @@ class Students extends Component {
         <ul className="mdc-list">
         <Subscribe to={[StudentContainer]}>{container =>
         <div>
-            {container.selectors.getAllStudents().map(id => 
+            {container.selectors.getStudentsInStandard(this.props.standardName).map(id => 
             <div key={id}>
                 <Link to={`/student/${id}`}>
                     <li className="mdc-layout-grid__inner mdc-list-item">

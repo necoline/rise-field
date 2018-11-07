@@ -53,6 +53,7 @@ export default class StudentContainer extends Container {
             .reduce((standardList, currentStudent) => (
                 { ...standardList, [currentStudent.class]: true }
                 ), {}) || [],
+        getStudentsInStandard: (standard) => this.state.students.filter(id => this.state.studentHash[id].class == standard),
         getAllUnderFive: (ids) => ids.filter(id => this.state.studentHash[id].age < 5)
     }
 
