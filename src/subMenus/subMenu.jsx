@@ -6,10 +6,17 @@ import Header from '../common/Header';
 import StandardContainer from '../containers/StandardContainer';
 
 class SubMenu extends Component {
-  // bring data from standard specific endpoint in class container
+  
+  standardName = (id, container) => {
+    const stnd = container.selectors.getStandardData(id)
+    console.log('stnd', stnd.standardName)
+    const standardName = stnd.standardName
+    return `${standardName}`
+  }
+
   render() {
     return (
-  
+
       <div>
         <Header title="Registers"/>
         <div className="mdc-layout-grid container">
@@ -19,16 +26,19 @@ class SubMenu extends Component {
                 <button className="mdc-button mdc-button--raised large-button">All Students</button>
               </Link>
             </div>
-            <div className="mdc-layout-grid__cell row grid-center">
-              <Link to="/register">
-                <button className="mdc-button mdc-button--raised large-button">Class 1</button>
-              </Link>
-            </div>
-            <div className="mdc-layout-grid__cell row grid-center">
-              <Link to="/register">
-                <button className="large-button mdc-button mdc-button--raised">Class 2</button>
-              </Link>
-            </div>
+            <Subscribe to={[StandardContainer]}>{container =>
+                <ul>
+                  {container.selectors.getAllStandards().map(id => 
+                  <div className="mdc-layout-grid__cell row grid-center">
+                    <Link to="/register">
+                      <button className="mdc-button mdc-button--raised large-button">
+                        {this.standardName(id, container)}
+                      </button>
+                    </Link>
+                  </div>)}
+                </ul>
+            }
+            </Subscribe> 
           </div>
         </div>
       </div>
