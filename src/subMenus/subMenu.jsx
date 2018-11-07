@@ -8,9 +8,7 @@ import StandardContainer from '../containers/StandardContainer';
 class SubMenu extends Component {
   
   standardName = (id, container) => {
-    const stnd = container.selectors.getStandardData(id)
-    console.log('stnd', stnd.standardName)
-    const standardName = stnd.standardName
+    const { standardName } = container.selectors.getStandardData(id)
     return `${standardName}`
   }
 
@@ -27,16 +25,16 @@ class SubMenu extends Component {
               </Link>
             </div>
             <Subscribe to={[StandardContainer]}>{container =>
-                <ul>
+                <div>
                   {container.selectors.getAllStandards().map(id => 
-                  <div className="mdc-layout-grid__cell row grid-center">
+                  <div key={id} className="mdc-layout-grid__cell row grid-center">
                     <Link to="/register">
                       <button className="mdc-button mdc-button--raised large-button">
                         {this.standardName(id, container)}
                       </button>
                     </Link>
                   </div>)}
-                </ul>
+                </div>
             }
             </Subscribe> 
           </div>
