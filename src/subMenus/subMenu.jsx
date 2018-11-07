@@ -14,10 +14,6 @@ class SubMenu extends Component {
     return `${standardName}`
   }
 
-  selectStandard = (id, container) => {
-    container.selectStandard(id)
-  }
-
   render() {
     return (
       <div>
@@ -33,10 +29,8 @@ class SubMenu extends Component {
               <div>
                 {container.selectors.getAllStandards().map(id => 
                   <div key={id} className="mdc-layout-grid__cell row grid-center">
-                    <Link to="/register">
-                      <button 
-                        className="mdc-button mdc-button--raised large-button"
-                        onClick={() => this.selectStandard(id, container)}>
+                    <Link to={`/register/${id}`}>
+                      <button className="mdc-button mdc-button--raised large-button">
                         {this.standardName(id, container)}
                       </button>
                     </Link>
