@@ -33,10 +33,6 @@ render() {
                 </div>
                 <div className="mdc-layout-grid__cell page-header">
                     {/* <Link to="/student-form"> */}
-                    {/* <Button outlined aria-label="add" onClick={this.openDialog()}>
-                    <ButtonIcon icon="add" />
-                        Add Student
-                    </Button> */}
                     {/* </Link> */}
                     {/* <Dialog /> */}
                     <SimpleDialog
@@ -49,12 +45,9 @@ render() {
                         }}
                         />
 
-
-                        <Button
-                        raised
-                        onClick={evt => this.setState({isDialogOpen: true})}
-                        >
-                        Open Simple Dialog
+                        <Button outlined aria-label="add" onClick={evt => this.setState({isDialogOpen: true})}>
+                            <ButtonIcon icon="add" />
+                            Add Student
                         </Button>
                     
                 </div>
