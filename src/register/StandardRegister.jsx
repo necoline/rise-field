@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Subscribe } from 'unstated';
+import { Button, ButtonIcon } from '@rmwc/button'
 
 import StandardContainer from '../containers/StandardContainer'
 import Students from './Students';
@@ -23,10 +24,10 @@ render() {
                 </div>
                 <div className="mdc-layout-grid__cell page-header">
                     <Link to="/student-form">
-                    <button className="mdc-button" aria-label="add">
-                        <i className="material-icons mdc-button__icon">add</i>
+                    <Button outlined aria-label="add">
+                    <ButtonIcon icon="add" />
                         Add Student
-                    </button>
+                    </Button>
                     </Link>
                 </div>
                 <div className="mdc-layout-grid__cell row">
