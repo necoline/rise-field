@@ -21,7 +21,7 @@ class SubMenu extends Component {
         <div className="mdc-layout-grid container">
           <div className="mdc-layout-grid__inner">
             <div className="mdc-layout-grid__cell row grid-center">
-              <Link to="/register">
+              <Link to="/main-register">
                 <button className="mdc-button mdc-button--raised large-button">All Students</button>
               </Link>
             </div>

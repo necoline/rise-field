@@ -4,6 +4,7 @@ import { Provider } from 'unstated';
 
 import Landing from './Landing';
 import StandardRegister from './register/StandardRegister';
+import MainRegister from './register/MainRegister';
 import NewStudent from './student/NewStudent';
 import Student from './student/Student';
 import UpdateStudent from './student/UpdateStudent';
@@ -36,10 +37,10 @@ class App extends Component {
               exact
               path="/subMenu"
               component={SubMenu} />
-            {/* <Route
+            <Route
               exact
-              path="/register"
-              component={MainRegister} /> */}
+              path="/main-register"
+              component={MainRegister} />
             <Route
               exact
               path="/register/:id"
