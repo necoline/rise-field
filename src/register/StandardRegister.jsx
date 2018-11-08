@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { SimpleDialog } from '@rmwc/dialog'; 
 import { Subscribe } from 'unstated';
 import { Button, ButtonIcon } from '@rmwc/button'
 
-import StandardContainer from '../containers/StandardContainer'
+import StandardContainer from '../containers/StandardContainer';
+// import Dialog from '../common/Dialog';
 import Students from './Students';
 import Header from '../common/Header';
 
 
 class StandardRegister extends Component {
+    state = {
+        isDialogOpen: false
+    }
+
+    openDialog = () => this.setState({ isDialogOpen: true });
+
+    closeDialog = () => this.setState({ isDialogOpen: false });
 
     getStandardName = (container) => container.selectors.getStandardData(this.props.match.params.id).standardName
 
@@ -23,12 +32,31 @@ render() {
                     <span className='page-title'> {this.getStandardName(container)} </span>
                 </div>
                 <div className="mdc-layout-grid__cell page-header">
-                    <Link to="/student-form">
-                    <Button outlined aria-label="add">
+                    {/* <Link to="/student-form"> */}
+                    {/* <Button outlined aria-label="add" onClick={this.openDialog()}>
                     <ButtonIcon icon="add" />
                         Add Student
-                    </Button>
-                    </Link>
+                    </Button> */}
+                    {/* </Link> */}
+                    {/* <Dialog /> */}
+                    <SimpleDialog
+                        title="This is a simple dialog"
+                        body="You can pass the body prop, or anything you want as children."
+                        open={this.state.isDialogOpen}
+                        onClose={evt => {
+                            console.log(evt.detail.action)
+                            this.setState({isDialogOpen: false})
+                        }}
+                        />
+
+
+                        <Button
+                        raised
+                        onClick={evt => this.setState({isDialogOpen: true})}
+                        >
+                        Open Simple Dialog
+                        </Button>
+                    
                 </div>
                 <div className="mdc-layout-grid__cell row">
                 <Students standardName={this.getStandardName(container)}/>
