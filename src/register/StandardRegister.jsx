@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-// import { Link } from "react-router-dom";
-import { SimpleDialog } from '@rmwc/dialog'; 
+import { Link } from "react-router-dom";
+import {
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+    DialogButton
+  } from '@rmwc/dialog';
 import { Subscribe } from 'unstated';
 import { Button, ButtonIcon } from '@rmwc/button'
 
@@ -22,6 +28,7 @@ class StandardRegister extends Component {
     getStandardName = (container) => container.selectors.getStandardData(this.props.match.params.id).standardName
 
 render() {
+    console.log('state', this.state.isDialogOpen)
     return (
         <div>
             <Header title=""/>
@@ -32,23 +39,25 @@ render() {
                     <span className='page-title'> {this.getStandardName(container)} </span>
                 </div>
                 <div className="mdc-layout-grid__cell page-header">
-                    {/* <Link to="/student-form"> */}
-                    {/* </Link> */}
-                    {/* <Dialog /> */}
-                    <SimpleDialog
-                        title="This is a simple dialog"
-                        body="You can pass the body prop, or anything you want as children."
+                    <Dialog
                         open={this.state.isDialogOpen}
-                        onClose={evt => {
-                            console.log(evt.detail.action)
-                            this.setState({isDialogOpen: false})
-                        }}
-                        />
-
-                        <Button outlined aria-label="add" onClick={evt => this.setState({isDialogOpen: true})}>
-                            <ButtonIcon icon="add" />
-                            Add Student
-                        </Button>
+                        onClose={evt => {this.setState({isDialogOpen: false})}}>    
+                        <DialogContent>
+                            <Button raised tag={Link} to="/student-form">
+                                Create Profile
+                            </Button>
+                            <Button raised tag={Link} to="/main-register">
+                                Select From Register
+                            </Button>
+                        </DialogContent>
+                        <DialogActions>
+                            <DialogButton action="close">Cancel</DialogButton>
+                        </DialogActions>
+                    </Dialog>
+                    <Button outlined aria-label="add" onClick={evt => this.setState({isDialogOpen: true})}>
+                        <ButtonIcon icon="add" />
+                        Add Student
+                    </Button>
                     
                 </div>
                 <div className="mdc-layout-grid__cell row">
