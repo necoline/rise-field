@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Button } from '@rmwc/button'
+
 import Header from './common/Header';
 
 const Landing = () => (
@@ -9,17 +11,17 @@ const Landing = () => (
       <div className="mdc-layout-grid__inner menu-container">
         <div className="mdc-layout-grid__cell menu-row row grid-center">
           <Link to="/">
-            <button className="mdc-button mdc-button--raised large-button">Attendance</button>
+            <Button raised>Attendance</Button>
           </Link>
         </div>
         <div className="mdc-layout-grid__cell menu-row row grid-center">
           <Link to="/subMenu">
-            <button className="mdc-button mdc-button--raised large-button">Register</button>
+            <Button raised>Register</Button>
           </Link>
         </div>
         <div className="mdc-layout-grid__cell menu-row row grid-center">
           <Link to="/">
-            <button className="large-button mdc-button mdc-button--raised">Reports</button>
+            <Button raised>Reports</Button>
           </Link>
         </div>
       </div>

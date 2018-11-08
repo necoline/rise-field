@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from '@rmwc/button'
 import PropTypes from 'prop-types';
 
 import InputField from '../common/InputField';
@@ -80,9 +81,7 @@ class Form extends Component {
             </div> 
 
             <div className="mdc-layout-grid__cell grid-center">
-              <button className="submit-button mdc-button mdc-button--raised">
-                {this.props.submitText}
-              </button>
+              <Button raised> {this.props.submitText}</Button>
             </div>
           </form>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Subscribe } from 'unstated';
+import { Button } from '@rmwc/button'
 import PropTypes from 'prop-types';
 
 import firebase from '../firebase';
@@ -80,9 +81,9 @@ class UpdateStudentDetails extends Component {
                   label="Guardian's Last Name"/>
               </div>
             <div className="mdc-layout-grid__cell grid-center">
-              <button type="submit" className="submit-button mdc-button mdc-button--raised">
+              <Button raised type="submit">
                 Save Changes
-              </button>
+              </Button>
             </div>
           </form>}
           </Subscribe>

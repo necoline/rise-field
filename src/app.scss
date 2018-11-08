@@ -12,7 +12,9 @@ $mdc-typography-font-family: "Arial";
 @import "@material/floating-label/mdc-floating-label";
 @import "@material/list/mdc-list";
 @import "@material/top-app-bar/mdc-top-app-bar";
-@import "@material/fab/mdc-fab";
+@import "@material/dialog/mdc-dialog";
+// @import "@material/dialog";
+// @import "@material/button";
 
 $phone-width: 320px; 
 $tablet-width: 768px; 
@@ -116,23 +118,8 @@ a {
   }
 
 // ----- BUTTONS ------
-  .submit-button {
-    @include mdc-button-ink-color($mdc-theme-on-primary);
-  }
 
-  .delete-btn {
-    margin-left: 80%;
-    @include mdc-button-ink-color($mdc-theme-on-primary);
-  }
 
-  .fab-right {
-    float: right;
-    margin-right: 5%;
-  }
-
-  .fab-toolbar {
-    margin: 0 5px;
-  }
 
   .form {
     display: grid;
@@ -169,22 +156,8 @@ a {
   }  
 
 // ----- BUTTONS ------
-  .submit-button {
-    @include mdc-button-ink-color($mdc-theme-on-primary);
-  }
 
-  .delete-btn {
-    margin-left: 80%;
-    @include mdc-button-ink-color($mdc-theme-on-primary);
-  }
 
-  .fab-right {
-    margin-left: 65%;
-  }
-
-  .fab-toolbar {
-    margin: 0 5px;
-  }
 }
 
 // ------------------------------------------------ PHONE ------------------------------------------------
@@ -210,27 +183,8 @@ a {
   }
 
 // ----- BUTTONS ------
-  .submit-button {
-    @include mdc-button-ink-color($mdc-theme-on-primary);
-  }
 
-  .delete-btn {
-    margin-left: 80%;
-    @include mdc-button-ink-color($mdc-theme-on-primary);
-  }
 
-  .large-button {
-    background-color: purple;
-  }
-
-  .fab-right {
-    margin: 0 0 5% 40%;
-  }
-
-  .fab-toolbar {
-    margin: 0 5px;
-    background-color: purple;
-  }
 
  // ----- FORM ------
  .form {

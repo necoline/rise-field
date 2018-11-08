@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Subscribe } from 'unstated';
+import { Button } from '@rmwc/button'
 import PropTypes from 'prop-types';
 
 import Header from '../common/Header';
@@ -22,7 +23,7 @@ class SubMenu extends Component {
           <div className="mdc-layout-grid__inner">
             <div className="mdc-layout-grid__cell menu-row row grid-center">
               <Link to="/main-register">
-                <button className="mdc-button mdc-button--raised large-button">All Students</button>
+                <Button raised>All Students</Button>
               </Link>
             </div>
             <Subscribe to={[StandardContainer]}>{container =>
@@ -30,9 +31,9 @@ class SubMenu extends Component {
                 {container.selectors.getAllStandards().map(id => 
                   <div key={id} className="mdc-layout-grid__cell menu-row row grid-center">
                     <Link to={`/register/${id}`}>
-                      <button className="mdc-button mdc-button--raised large-button">
+                      <Button raised>
                         {this.standardName(id, container)}
-                      </button>
+                      </Button>
                     </Link>
                   </div>
                 )}
