@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Subscribe } from 'unstated';
 import { Link } from "react-router-dom";
+import { Button, ButtonIcon } from '@rmwc/button'
 import PropTypes from 'prop-types';
 import firebase from '../firebase';
 
@@ -41,13 +42,13 @@ class Student extends Component {
           <Subscribe to={[StudentContainer]}>{({removeStudent}) =>
             <div className="mdc-layout-grid__cell">
             <Link to={`/student/${id}/edit`}>
-              <button className="mdc-fab fab-toolbar" aria-label="edit">
-                <span className="mdc-fab__icon material-icons">edit</span>
-              </button>
+              <Button aria-label="edit">
+                <ButtonIcon icon="edit" />
+              </Button>
             </Link>
-              <button className="mdc-fab fab-toolbar" aria-label="remove" onClick={this.setRemoveStudent(removeStudent)}>
-                <span className="mdc-fab__icon material-icons">delete</span>
-              </button>
+              <Button aria-label="remove" onClick={this.setRemoveStudent(removeStudent)}>
+                <ButtonIcon icon="delete" />
+              </Button>
             </div>}
          </Subscribe>  
              <div className="mdc-layout-grid__cell form">
