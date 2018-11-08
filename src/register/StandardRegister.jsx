@@ -14,15 +14,18 @@ class StandardRegister extends Component {
 render() {
     return (
         <div>
-            <Header title="Register"/>
+            <Header title=""/>
             <Subscribe to={[StandardContainer]}>{container =>
             <div className="mdc-layout-grid container">
             <div className="mdc-layout-grid__inner">
                 <div className="mdc-layout-grid__cell page-header">
                     <span className='page-title'> {this.getStandardName(container)} </span>
+                </div>
+                <div className="mdc-layout-grid__cell page-header">
                     <Link to="/student-form">
-                    <button className="mdc-fab fab-right" aria-label="add">
-                        <span className="mdc-fab__icon material-icons">add</span>
+                    <button className="mdc-button" aria-label="add">
+                        <i className="material-icons mdc-button__icon">add</i>
+                        Add Student
                     </button>
                     </Link>
                 </div>

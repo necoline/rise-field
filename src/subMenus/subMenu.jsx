@@ -20,7 +20,7 @@ class SubMenu extends Component {
         <Header title="Registers"/>
         <div className="mdc-layout-grid container">
           <div className="mdc-layout-grid__inner">
-            <div className="mdc-layout-grid__cell row grid-center">
+            <div className="mdc-layout-grid__cell menu-row row grid-center">
               <Link to="/main-register">
                 <button className="mdc-button mdc-button--raised large-button">All Students</button>
               </Link>
@@ -28,7 +28,7 @@ class SubMenu extends Component {
             <Subscribe to={[StandardContainer]}>{container =>
               <div>
                 {container.selectors.getAllStandards().map(id => 
-                  <div key={id} className="mdc-layout-grid__cell row grid-center">
+                  <div key={id} className="mdc-layout-grid__cell menu-row row grid-center">
                     <Link to={`/register/${id}`}>
                       <button className="mdc-button mdc-button--raised large-button">
                         {this.standardName(id, container)}
