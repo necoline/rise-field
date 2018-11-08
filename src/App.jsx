@@ -3,7 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'unstated';
 
 import Landing from './Landing';
-import Register from './register/Register';
+import StandardRegister from './register/StandardRegister';
+import MainRegister from './register/MainRegister';
 import NewStudent from './student/NewStudent';
 import Student from './student/Student';
 import UpdateStudent from './student/UpdateStudent';
@@ -38,8 +39,12 @@ class App extends Component {
               component={SubMenu} />
             <Route
               exact
-              path="/register"
-              component={Register} />
+              path="/main-register"
+              component={MainRegister} />
+            <Route
+              exact
+              path="/register/:id"
+              component={StandardRegister} />
             <Route
               exact
               path="/student/:id"

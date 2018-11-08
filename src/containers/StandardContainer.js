@@ -4,7 +4,8 @@ import firebase from '../firebase';
 export default class StandardContainer extends Container {
     state = {
         standards: [],
-        standardHash: {}
+        standardHash: {},
+        selectedStandard: ''
     }
 
     fetchAllStandards = () => {
@@ -31,8 +32,17 @@ export default class StandardContainer extends Container {
     //     standardRef.update(standardDetails);
     // };
 
+    // Sets standard selected in the sub menu for later reference when standare specific
+    // student lists are populated in register.
+    selectStandard = (id) => {
+        console.log('container id', id)
+        this.setState({ selectedStandard: id })
+    }
+
+    // Methods for retrieving data in components 
     selectors = {
         getAllStandards: () => this.state.standards || [],
+        getSelectedStandard: () => this.state.standardHash[this.state.selectedStandard] || {},
         getStandardData: (id) => this.state.standardHash[id] || {}
     }
 

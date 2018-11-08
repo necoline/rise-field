@@ -49,11 +49,11 @@ export default class StudentContainer extends Container {
     selectors = {
         getAllStudents: () => this.state.students || [],
         getStudentData: (id) => this.state.studentHash[id] || {},
-        getStandardList: () => this.state.students
-            .reduce((standardList, currentStudent) => (
-                { ...standardList, [currentStudent.class]: true }
-                ), {}) || [],
-        getAllUnderFive: (ids) => ids.filter(id => this.state.studentHash[id].age < 5)
+        getStudentsInStandard: (standard) => {
+            if (standard) {
+                return this.state.students.filter(id => this.state.studentHash[id].standardName == standard)
+             } return this.state.students
+            }
     }
 
  }
