@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import {
     Dialog,
     DialogTitle,
@@ -8,20 +7,19 @@ import {
     DialogButton
   } from '@rmwc/dialog';
 import { Subscribe } from 'unstated';
-import { Button, ButtonIcon } from '@rmwc/button'
+import { Button, ButtonIcon } from '@rmwc/button';
 
-import StandardContainer from '../containers/StandardContainer';
-// import Dialog from '../common/Dialog';
-import Students from './Students';
+import DialogMenu from '../common/DialogMenu';
 import Header from '../common/Header';
+import StandardContainer from '../containers/StandardContainer';
+import Students from './Students';
+
 
 
 class StandardRegister extends Component {
     state = {
         isDialogOpen: false
     }
-
-    openDialog = () => this.setState({ isDialogOpen: true });
 
     closeDialog = () => this.setState({ isDialogOpen: false });
 
@@ -42,23 +40,12 @@ render() {
                     <Dialog
                         open={this.state.isDialogOpen}
                         onClose={evt => {this.setState({isDialogOpen: false})}}>    
-                        <DialogContent>
-                            <Button raised tag={Link} to="/student-form">
-                                Create Profile
-                            </Button>
-                            <Button raised tag={Link} to="/main-register">
-                                Select From Register
-                            </Button>
-                        </DialogContent>
-                        <DialogActions>
-                            <DialogButton action="close">Cancel</DialogButton>
-                        </DialogActions>
+                        <DialogMenu/>
                     </Dialog>
                     <Button outlined aria-label="add" onClick={evt => this.setState({isDialogOpen: true})}>
                         <ButtonIcon icon="add" />
                         Add Student
-                    </Button>
-                    
+                    </Button>     
                 </div>
                 <div className="mdc-layout-grid__cell row">
                 <Students standardName={this.getStandardName(container)}/>
