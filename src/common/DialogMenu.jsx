@@ -1,31 +1,35 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import {
-    Dialog,
-    DialogTitle,
-    DialogContent,
-    DialogActions,
-    DialogButton
-  } from '@rmwc/dialog';
+import { DialogContent } from '@rmwc/dialog';
+import PropTypes from 'prop-types';
 
 import { Button } from '@rmwc/button';
 
-
-  const DialogMenu  = () => (
+  const DialogMenu  = (props) => (
   
       <DialogContent>
-          <div className="row">
-              <Button raised tag={Link} to="/student-form">
-                  New Student
+        {props.menuContent.map(option => 
+          <div key={option.id} className="menu-row">
+              <Button raised tag={Link} to={option.link}>
+                  {option.text}
               </Button>
           </div>
-          <div>   
-              <Button raised tag={Link} to="/main-register">
-                  Existing Student
-              </Button>
-          </div>
+        )}
       </DialogContent>
   );
+
+  DialogMenu.propTypes = {
+    menuContent: PropTypes.arrayOf(
+      PropTypes.shape({
+        text: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+      })
+    ).isRequired
+    
+};
+
+
 
 export default DialogMenu;
 

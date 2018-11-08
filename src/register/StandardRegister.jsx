@@ -14,14 +14,18 @@ import Header from '../common/Header';
 import StandardContainer from '../containers/StandardContainer';
 import Students from './Students';
 
-
-
 class StandardRegister extends Component {
     state = {
-        isDialogOpen: false
+        isDialogOpen: false,
+        menuContent: [
+            { id: "1", text: "New Student", link: "/student-form"},
+            { id: "2", text: "Existing Student", link: "/main-register"}
+        ]
     }
 
     closeDialog = () => this.setState({ isDialogOpen: false });
+
+    openDialog = () => this.setState({ isDialogOpen: true });
 
     getStandardName = (container) => container.selectors.getStandardData(this.props.match.params.id).standardName
 
@@ -39,10 +43,10 @@ render() {
                 <div className="mdc-layout-grid__cell page-header">
                     <Dialog
                         open={this.state.isDialogOpen}
-                        onClose={evt => {this.setState({isDialogOpen: false})}}>    
-                        <DialogMenu/>
+                        onClose={() => this.closeDialog()}>    
+                        <DialogMenu menuContent={this.state.menuContent}/>
                     </Dialog>
-                    <Button outlined aria-label="add" onClick={evt => this.setState({isDialogOpen: true})}>
+                    <Button outlined aria-label="add" onClick={() => this.openDialog()}>
                         <ButtonIcon icon="add" />
                         Add Student
                     </Button>     
