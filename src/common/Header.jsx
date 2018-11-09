@@ -7,9 +7,6 @@ const Header = (props) => (
         <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <a href="/" className="material-icons mdc-top-app-bar__navigation-icon right">menu</a>
         </section>
-        <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-middle">
-          <span className="title">{props.title}</span>
-        </section>
         <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
           <a href="/" className="material-icons mdc-top-app-bar__navigation-icon">account_circle</a>
         </section>

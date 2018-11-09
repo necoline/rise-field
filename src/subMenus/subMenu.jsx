@@ -18,7 +18,7 @@ class SubMenu extends Component {
   render() {
     return (
       <div>
-        <Header title="Registers"/>
+        <Header />
         <div className="mdc-layout-grid container">
           <div className="mdc-layout-grid__inner">
             <div className="mdc-layout-grid__cell menu-row row grid-center">

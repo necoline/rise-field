@@ -6,7 +6,7 @@ import Header from './common/Header';
 
 const Landing = () => (
   <div>
-    <Header title="RISE"/>
+    <Header />
     <div className="mdc-layout-grid container">
       <div className="mdc-layout-grid__inner menu-container">
         <div className="mdc-layout-grid__cell menu-row row grid-center">

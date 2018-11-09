@@ -11,7 +11,7 @@ import Header from '../common/Header';
 
 const MainRegister = () => (
   <div>
-    <Header title=""/>
+    <Header />
     <Subscribe to={[StandardContainer]}>{container =>
     <div className="mdc-layout-grid container">
       <div className="mdc-layout-grid__inner">

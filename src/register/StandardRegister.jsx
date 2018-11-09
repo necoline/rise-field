@@ -33,7 +33,7 @@ render() {
     console.log('state', this.state.isDialogOpen)
     return (
         <div>
-            <Header title=""/>
+            <Header />
             <Subscribe to={[StandardContainer]}>{container =>
             <div className="mdc-layout-grid container">
             <div className="mdc-layout-grid__inner">

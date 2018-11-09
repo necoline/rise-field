@@ -36,7 +36,7 @@ class Student extends Component {
 
     return student && (
       <div>
-        <Header title={"Student Profile"}/>
+        <Header />
         <div className="mdc-layout-grid container">
           <div className="mdc-layout-grid__inner">
           <Subscribe to={[StudentContainer]}>{({removeStudent}) =>
