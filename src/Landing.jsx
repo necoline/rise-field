@@ -11,17 +11,17 @@ const Landing = () => (
       <div className="mdc-layout-grid__inner menu-container">
         <div className="mdc-layout-grid__cell menu-row row grid-center">
           <Link to="/">
-            <Button raised>Attendance</Button>
+            <Button raised className="menu-btn">Attendance</Button>
           </Link>
         </div>
         <div className="mdc-layout-grid__cell menu-row row grid-center">
           <Link to="/subMenu">
-            <Button raised>Register</Button>
+            <Button raised className="menu-btn">Register</Button>
           </Link>
         </div>
         <div className="mdc-layout-grid__cell menu-row row grid-center">
           <Link to="/">
-            <Button raised>Reports</Button>
+            <Button raised className="menu-btn">Reports</Button>
           </Link>
         </div>
       </div>

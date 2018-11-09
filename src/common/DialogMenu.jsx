@@ -10,7 +10,7 @@ import { Button } from '@rmwc/button';
       <DialogContent>
         {props.menuContent.map(option => 
           <div key={option.id} className="menu-row">
-              <Button raised tag={Link} to={option.link}>
+              <Button raised tag={Link} to={option.link} className="menu-btn">
                   {option.text}
               </Button>
           </div>

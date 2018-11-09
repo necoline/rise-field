@@ -23,7 +23,7 @@ class SubMenu extends Component {
           <div className="mdc-layout-grid__inner">
             <div className="mdc-layout-grid__cell menu-row row grid-center">
               <Link to="/main-register">
-                <Button raised>All Students</Button>
+                <Button raised className="menu-btn">All Students</Button>
               </Link>
             </div>
             <Subscribe to={[StandardContainer]}>{container =>
@@ -31,7 +31,7 @@ class SubMenu extends Component {
                 {container.selectors.getAllStandards().map(id => 
                   <div key={id} className="mdc-layout-grid__cell menu-row row grid-center">
                     <Link to={`/register/${id}`}>
-                      <Button raised>
+                      <Button raised className="menu-btn">
                         {this.standardName(id, container)}
                       </Button>
                     </Link>
