@@ -57,8 +57,14 @@ a {
   margin: 10% 0;
 }
 
-.page-header {
+.menu-btn {
+  background-color: pink;
+  color: yellow;
+}
+
+.page-sub-title {
   text-align: center;
+  margin: 1% 0;
 }
 
 // ----- LIST ------
@@ -110,9 +116,6 @@ a {
   .page-title {
     font-size: 40px;
     color: $mdc-theme-primary;
-  }
-
-  .page-header {
     text-align: center;
     padding-top: 3%;
   }
@@ -145,6 +148,7 @@ a {
   .page-title {
     font-size: 30px;
     color: $mdc-theme-primary;
+    text-align: center;
   }
 
 // ----- FORM ------
@@ -173,13 +177,10 @@ a {
     color: $mdc-theme-on-primary;
   }
 
-  .page-header {
-    text-align: center;
-  }
-
   .page-title {
     font-size: 25px;
     color: $mdc-theme-primary;
+    text-align: center;
   }
 
 // ----- BUTTONS ------

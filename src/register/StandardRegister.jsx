@@ -33,14 +33,14 @@ render() {
     console.log('state', this.state.isDialogOpen)
     return (
         <div>
-            <Header title=""/>
+            <Header />
             <Subscribe to={[StandardContainer]}>{container =>
             <div className="mdc-layout-grid container">
             <div className="mdc-layout-grid__inner">
-                <div className="mdc-layout-grid__cell page-header">
+                <div className="mdc-layout-grid__cell page-title">
                     <span className='page-title'> {this.getStandardName(container)} </span>
                 </div>
-                <div className="mdc-layout-grid__cell page-header">
+                <div className="mdc-layout-grid__cell page-title">
                     <Dialog
                         open={this.state.isDialogOpen}
                         onClose={() => this.closeDialog()}>    

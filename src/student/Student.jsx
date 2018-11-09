@@ -36,46 +36,29 @@ class Student extends Component {
 
     return student && (
       <div>
-        <Header title={"Student Profile"}/>
+        <Header />
         <div className="mdc-layout-grid container">
           <div className="mdc-layout-grid__inner">
-          <Subscribe to={[StudentContainer]}>{({removeStudent}) =>
             <div className="mdc-layout-grid__cell">
-            <Link to={`/student/${id}/edit`}>
-              <Button aria-label="edit">
+              <Button tag={Link} to={`/student/${id}/edit`} aria-label="edit">
                 <ButtonIcon icon="edit" />
               </Button>
-            </Link>
-              <Button aria-label="remove" onClick={this.setRemoveStudent(removeStudent)}>
-                <ButtonIcon icon="delete" />
-              </Button>
-            </div>}
-         </Subscribe>  
+            </div>
+            <div className="mdc-layout-grid__cell page-title">
+            {`${student.firstName} ${student.lastName}`}
+            </div>
+            <div className="mdc-layout-grid__cell page-sub-title">
+            {`Individual Number: ${student.individualNumber}`}
+            </div>
              <div className="mdc-layout-grid__cell form">
-             <TextField 
-                value={student.firstName}
-                id='firstName' 
-                label="First Name"/>
-              <TextField 
-                value={student.middleName}
-                id='middleName' 
-                label="Middle Name"/>
-              <TextField 
-                value={student.lastName}
-                id='lastName'
-                label="Last Name"/>
               <TextField 
                 value={student.preferredName}
                 id='preferredName' 
                 label="Preferred Name"/>
               <TextField 
-                value={student.guardianFirstName}
+                value={`${student.guardianFirstName} ${student.guardianLastName}`}
                 id='guardianFirstName' 
-                label="Guardian's First Name"/>
-              <TextField 
-                value={student.guardianLastName}
-                id='guardianLastName' 
-                label="Guardian's Last Name"/>
+                label="Guardian"/>
             </div>
           </div>
         </div>
@@ -87,13 +70,13 @@ class Student extends Component {
 Student.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.object.isRequired
-  }).isRequired,
-  history: PropTypes.func
+  }).isRequired
+  // history: PropTypes.function
 };
   
-  Student.defaultProps = {
-    history: PropTypes.func
-  };
+  // Student.defaultProps = {
+  //   history: () => {}
+  // };
 
 
 export default Student;

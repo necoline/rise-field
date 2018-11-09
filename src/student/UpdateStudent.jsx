@@ -42,7 +42,7 @@ class UpdateStudentDetails extends Component {
   render() {
     return (
       <div>
-        <Header title={'Update Student'}/>
+        <Header />
         <div className="mdc-layout-grid container">
         <Subscribe to={[StudentContainer]}>{({updateStudent}) =>
           <form className="mdc-layout-grid__inner" onSubmit={this.setSubmission(updateStudent)}>
