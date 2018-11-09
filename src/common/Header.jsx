@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Header = (props) => (
   <header className="mdc-top-app-bar mdc-top-app-bar fixed">
@@ -14,8 +14,12 @@ const Header = (props) => (
   </header>
 );
 
-Header.propTypes = {
-  title: PropTypes.string.isRequired,
-};
+// Header.propTypes = {
+//   rightIcon: PropTypes.string,
+// };
+
+// Header.defaultProps = {
+//   rightIcon: 'account_circle'
+// };
 
 export default Header;

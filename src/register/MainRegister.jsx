@@ -15,7 +15,7 @@ const MainRegister = () => (
     <Subscribe to={[StandardContainer]}>{container =>
     <div className="mdc-layout-grid container">
       <div className="mdc-layout-grid__inner">
-          <div className="mdc-layout-grid__cell page-header">
+          <div className="mdc-layout-grid__cell page-title">
             <span className='page-title'> Fuji School Register </span>
           </div>
         <div className="mdc-layout-grid__cell row">
